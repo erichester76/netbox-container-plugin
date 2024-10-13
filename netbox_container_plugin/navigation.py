@@ -119,7 +119,7 @@ host_item = [
 ]
 
 menu = PluginMenu(
-    label="Virtualization",
+    label="Containers",
     groups=(("Containers", host_item),),
     icon_class="mdi mdi-docker",
 )
