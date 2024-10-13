@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "netbox-docker-plugin"
+name = "netbox-container-plugin"
 version = "3.0.1"
 authors = [
   { name="Vincent Simonin", email="vincent@saashup.com" },
