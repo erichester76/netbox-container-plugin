@@ -8,11 +8,11 @@ from .utilities import create_webhook
 class NetBoxDockerConfig(PluginConfig):
     """Plugin Config Class"""
 
-    name = "netbox_docker_plugin"
-    verbose_name = " NetBox Docker Plugin"
-    description = "Manage Docker"
+    name = "netbox_container_plugin"
+    verbose_name = " NetBox Container Plugin"
+    description = "Manage Containers"
     version = "3.0.1"
-    base_url = "docker"
+    base_url = "container"
     min_version = "4.1.0"
     author = "Vincent Simonin <vincent@saashup.com>, David Delassus <david.jose.delassus@gmail.com>"
     author_email = "vincent@saashup.com, david.jose.delassus@gmail.com"
