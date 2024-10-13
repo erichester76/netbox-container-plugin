@@ -18,10 +18,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install netbox_docker_plugin Dependencies
+      - name: Install netbox_container_plugin Dependencies
         run: |
           pip install build
-      - name: Install netbox_docker_plugin Dependencies
+      - name: Install netbox_container_plugin Dependencies
         run: |
           python -m build
       - name: Publish package distributions to PyPI

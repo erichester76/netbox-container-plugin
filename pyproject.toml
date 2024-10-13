@@ -25,4 +25,4 @@ keywords = ["netbox", "netbox-plugin", "docker"]
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["netbox_docker_plugin*"]
+include = ["netbox_container_plugin*"]
