@@ -10,8 +10,8 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "netbox_docker_plugin",
-            "0007_remove_container_netbox_docker_plugin_container_unique_name_host__and_more",
+            "netbox_container_plugin",
+            "0007_remove_container_netbox_container_plugin_container_unique_name_host__and_more",
         ),
     ]
 
@@ -37,14 +37,14 @@ class Migration(migrations.Migration):
             model_name="network",
             constraint=models.UniqueConstraint(
                 fields=("host", "name"),
-                name="netbox_docker_plugin_network_unique_name_host",
+                name="netbox_container_plugin_network_unique_name_host",
             ),
         ),
         migrations.AddConstraint(
             model_name="network",
             constraint=models.UniqueConstraint(
                 fields=("host", "NetworkID"),
-                name="netbox_docker_plugin_network_unique_NetworkID_host",
+                name="netbox_container_plugin_network_unique_NetworkID_host",
             ),
         ),
     ]

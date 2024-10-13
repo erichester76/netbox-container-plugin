@@ -8,12 +8,12 @@ from netbox.plugins import (
 
 host_buttons = [
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:host_add",
+        link="plugins:netbox_container_plugin:host_add",
         title="Add",
         icon_class="mdi mdi-plus-thick"
     ),
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:host_import",
+        link="plugins:netbox_container_plugin:host_import",
         title="Import",
         icon_class="mdi mdi-upload"
     ),
@@ -21,7 +21,7 @@ host_buttons = [
 
 registry_button = [
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:registry_add",
+        link="plugins:netbox_container_plugin:registry_add",
         title="Add",
         icon_class="mdi mdi-plus-thick"
     ),
@@ -29,12 +29,12 @@ registry_button = [
 
 image_buttons = [
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:image_add",
+        link="plugins:netbox_container_plugin:image_add",
         title="Add",
         icon_class="mdi mdi-plus-thick"
     ),
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:image_import",
+        link="plugins:netbox_container_plugin:image_import",
         title="Import",
         icon_class="mdi mdi-upload"
     ),
@@ -42,12 +42,12 @@ image_buttons = [
 
 volume_buttons = [
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:volume_add",
+        link="plugins:netbox_container_plugin:volume_add",
         title="Add",
         icon_class="mdi mdi-plus-thick"
     ),
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:volume_import",
+        link="plugins:netbox_container_plugin:volume_import",
         title="Import",
         icon_class="mdi mdi-upload"
     ),
@@ -55,12 +55,12 @@ volume_buttons = [
 
 network_buttons = [
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:network_add",
+        link="plugins:netbox_container_plugin:network_add",
         title="Add",
         icon_class="mdi mdi-plus-thick"
     ),
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:network_import",
+        link="plugins:netbox_container_plugin:network_import",
         title="Import",
         icon_class="mdi mdi-upload"
     ),
@@ -68,12 +68,12 @@ network_buttons = [
 
 container_buttons = [
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:container_add",
+        link="plugins:netbox_container_plugin:container_add",
         title="Add",
         icon_class="mdi mdi-plus-thick"
     ),
     PluginMenuButton(
-        link="plugins:netbox_docker_plugin:container_import",
+        link="plugins:netbox_container_plugin:container_import",
         title="Import",
         icon_class="mdi mdi-upload"
     ),
@@ -81,40 +81,40 @@ container_buttons = [
 
 host_item = [
     PluginMenuItem(
-        link="plugins:netbox_docker_plugin:host_list",
+        link="plugins:netbox_container_plugin:host_list",
         link_text="Hosts",
         buttons=host_buttons,
-        permissions=["netbox_docker_plugin.view_host"],
+        permissions=["netbox_container_plugin.view_host"],
     ),
     PluginMenuItem(
-        link="plugins:netbox_docker_plugin:registry_list",
+        link="plugins:netbox_container_plugin:registry_list",
         link_text="Registries",
         buttons=registry_button,
-        permissions=["netbox_docker_plugin.view_registry"],
+        permissions=["netbox_container_plugin.view_registry"],
     ),
     PluginMenuItem(
-        link="plugins:netbox_docker_plugin:image_list",
+        link="plugins:netbox_container_plugin:image_list",
         link_text="Images",
         buttons=image_buttons,
-        permissions=["netbox_docker_plugin.view_image"],
+        permissions=["netbox_container_plugin.view_image"],
     ),
     PluginMenuItem(
-        link="plugins:netbox_docker_plugin:volume_list",
+        link="plugins:netbox_container_plugin:volume_list",
         link_text="Volumes",
         buttons=volume_buttons,
-        permissions=["netbox_docker_plugin.view_volume"],
+        permissions=["netbox_container_plugin.view_volume"],
     ),
     PluginMenuItem(
-        link="plugins:netbox_docker_plugin:network_list",
+        link="plugins:netbox_container_plugin:network_list",
         link_text="Networks",
         buttons=network_buttons,
-        permissions=["netbox_docker_plugin.view_network"],
+        permissions=["netbox_container_plugin.view_network"],
     ),
     PluginMenuItem(
-        link="plugins:netbox_docker_plugin:container_list",
+        link="plugins:netbox_container_plugin:container_list",
         link_text="Containers",
         buttons=container_buttons,
-        permissions=["netbox_docker_plugin.view_container"],
+        permissions=["netbox_container_plugin.view_container"],
     ),
 ]
 

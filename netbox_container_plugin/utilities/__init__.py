@@ -177,7 +177,7 @@ webhooks = [
 # pylint: disable=W0613
 def create_webhook(app_config, **kwargs):
     """Create automatically plugin webhook"""
-    if app_config.label == "netbox_docker_plugin":
+    if app_config.label == "netbox_container_plugin":
         # pylint: disable=C0415
         from django.contrib.contenttypes.models import ContentType
         from extras.models import Webhook
@@ -229,7 +229,7 @@ def create_webhook(app_config, **kwargs):
                     eventrule.save()
 
                     obj_content_type = ContentType.objects.get(
-                        app_label="netbox_docker_plugin", model=webhook["content_types"]
+                        app_label="netbox_container_plugin", model=webhook["content_types"]
                     )
 
                     # pylint: disable=E1101
@@ -261,7 +261,7 @@ def create_webhook(app_config, **kwargs):
                 obj.save()
 
                 content_type = ContentType.objects.get(
-                    app_label="netbox_docker_plugin", model=webhook["content_types"]
+                    app_label="netbox_container_plugin", model=webhook["content_types"]
                 )
 
                 # pylint: disable=E1101

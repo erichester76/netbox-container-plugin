@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "netbox_docker_plugin",
+            "netbox_container_plugin",
             "0018_alter_mount_volume_alter_networksetting_network",
         ),
     ]

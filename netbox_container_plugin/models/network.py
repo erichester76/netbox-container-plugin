@@ -93,4 +93,4 @@ class Network(NetBoxModel):
 
     def get_absolute_url(self):
         """override"""
-        return reverse("plugins:netbox_docker_plugin:network", args=[self.pk])
+        return reverse("plugins:netbox_container_plugin:network", args=[self.pk])

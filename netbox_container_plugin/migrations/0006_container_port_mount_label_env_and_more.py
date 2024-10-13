@@ -26,7 +26,7 @@ fields = [
         models.ForeignKey(
             on_delete=django.db.models.deletion.CASCADE,
             related_name="containers",
-            to="netbox_docker_plugin.host",
+            to="netbox_container_plugin.host",
         ),
     ),
     (
@@ -34,7 +34,7 @@ fields = [
         models.ForeignKey(
             on_delete=django.db.models.deletion.RESTRICT,
             related_name="containers",
-            to="netbox_docker_plugin.image",
+            to="netbox_container_plugin.image",
         ),
     ),
     (
@@ -44,7 +44,7 @@ fields = [
             blank=True,
             on_delete=django.db.models.deletion.RESTRICT,
             related_name="containers",
-            to="netbox_docker_plugin.network",
+            to="netbox_container_plugin.network",
         ),
     ),
 ]
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("extras", "0098_webhook_custom_field_data_webhook_tags"),
-        ("netbox_docker_plugin", "0005_network"),
+        ("netbox_container_plugin", "0005_network"),
     ]
 
     operations = [
@@ -101,7 +101,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="ports",
-                        to="netbox_docker_plugin.container",
+                        to="netbox_container_plugin.container",
                     ),
                 ),
             ],
@@ -133,14 +133,14 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="mounts",
-                        to="netbox_docker_plugin.container",
+                        to="netbox_container_plugin.container",
                     ),
                 ),
                 (
                     "volume",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.RESTRICT,
-                        to="netbox_docker_plugin.volume",
+                        to="netbox_container_plugin.volume",
                     ),
                 ),
             ],
@@ -182,7 +182,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="labels",
-                        to="netbox_docker_plugin.container",
+                        to="netbox_container_plugin.container",
                     ),
                 ),
             ],
@@ -224,7 +224,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="env",
-                        to="netbox_docker_plugin.container",
+                        to="netbox_container_plugin.container",
                     ),
                 ),
             ],
@@ -239,13 +239,13 @@ class Migration(migrations.Migration):
                 models.F("public_port"),
                 models.F("type"),
                 models.F("container"),
-                name="netbox_docker_plugin_port_unique_private_port_public_port_type_container'",
+                name="netbox_container_plugin_port_unique_private_port_public_port_type_container'",
             ),
         ),
         migrations.AddConstraint(
             model_name="mount",
             constraint=models.UniqueConstraint(
-                fields=("volume",), name="netbox_docker_plugin_mount_unique_volume"
+                fields=("volume",), name="netbox_container_plugin_mount_unique_volume"
             ),
         ),
         migrations.AddConstraint(
@@ -253,7 +253,7 @@ class Migration(migrations.Migration):
             constraint=models.UniqueConstraint(
                 models.F("key"),
                 models.F("container"),
-                name="netbox_docker_plugin_label_unique_key_container'",
+                name="netbox_container_plugin_label_unique_key_container'",
             ),
         ),
         migrations.AddConstraint(
@@ -261,7 +261,7 @@ class Migration(migrations.Migration):
             constraint=models.UniqueConstraint(
                 models.F("var_name"),
                 models.F("container"),
-                name="netbox_docker_plugin_env_unique_var_name_container'",
+                name="netbox_container_plugin_env_unique_var_name_container'",
             ),
         ),
         migrations.AddConstraint(
@@ -269,7 +269,7 @@ class Migration(migrations.Migration):
             constraint=models.UniqueConstraint(
                 django.db.models.functions.text.Lower("name"),
                 models.F("host"),
-                name="netbox_docker_plugin_container_unique_name_host'",
+                name="netbox_container_plugin_container_unique_name_host'",
             ),
         ),
     ]

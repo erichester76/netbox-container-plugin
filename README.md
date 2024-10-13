@@ -54,7 +54,7 @@ Enable the plugin in the `/opt/netbox/netbox/netbox/configuration.py` file:
 
 ```python
 PLUGINS = [
-    'netbox_docker_plugin',
+    'netbox_container_plugin',
 ]
 ```
 
@@ -167,7 +167,7 @@ After installing your development environment, you can run the tests plugin
 ```bash
 cd $PROJECT/netbox
 python3 -m pip install requests_mock
-python3 netbox/manage.py test netbox_docker_plugin.tests --keepdb -v 2
+python3 netbox/manage.py test netbox_container_plugin.tests --keepdb -v 2
 ```
 
 With code coverage, install [coverage.py](https://coverage.readthedocs.io/en/7.3.2/) and use it:
@@ -181,7 +181,7 @@ Then run the test with coverage.py and print the report:
 
 ```bash
 cd $PROJECT/netbox
-coverage run --include='*/netbox_docker_plugin/*' netbox/manage.py test netbox_docker_plugin.tests --keepdb -v 2
+coverage run --include='*/netbox_container_plugin/*' netbox/manage.py test netbox_container_plugin.tests --keepdb -v 2
 coverage report -m
 ```
 

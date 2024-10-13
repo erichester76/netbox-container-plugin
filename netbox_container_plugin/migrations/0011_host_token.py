@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("users", "0004_netboxgroup_netboxuser"),
-        ("netbox_docker_plugin", "0010_container_containerid_and_more"),
+        ("netbox_container_plugin", "0010_container_containerid_and_more"),
     ]
 
     operations = [

@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     """Migration file"""
 
     dependencies = [
-        ("netbox_docker_plugin", "0024_registry_host_alter_registry_name_and_more"),
+        ("netbox_container_plugin", "0024_registry_host_alter_registry_name_and_more"),
     ]
 
     operations = [

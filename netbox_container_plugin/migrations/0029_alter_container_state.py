@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
     """Migration file"""
 
     dependencies = [
-        ("netbox_docker_plugin", "0028_mount_and_bind_read_only"),
+        ("netbox_container_plugin", "0028_mount_and_bind_read_only"),
     ]
 
     operations = [

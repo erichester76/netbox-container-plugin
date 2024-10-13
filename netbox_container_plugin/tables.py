@@ -25,22 +25,22 @@ class HostTable(NetBoxTable):
 
     name = tables.Column(linkify=True)
     image_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:image_list",
+        viewname="plugins:netbox_container_plugin:image_list",
         url_params={"host_id": "pk"},
         verbose_name="Images count",
     )
     volume_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:volume_list",
+        viewname="plugins:netbox_container_plugin:volume_list",
         url_params={"host_id": "pk"},
         verbose_name="Volumes count",
     )
     network_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:network_list",
+        viewname="plugins:netbox_container_plugin:network_list",
         url_params={"host_id": "pk"},
         verbose_name="Networks count",
     )
     container_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:container_list",
+        viewname="plugins:netbox_container_plugin:container_list",
         url_params={"host_id": "pk"},
         verbose_name="Containers count",
     )
@@ -84,7 +84,7 @@ class RegistryTable(NetBoxTable):
 
     name = tables.Column(linkify=True)
     image_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:image_list",
+        viewname="plugins:netbox_container_plugin:image_list",
         url_params={"registry_id": "pk"},
         verbose_name="Images count",
     )
@@ -118,7 +118,7 @@ class ImageTable(NetBoxTable):
     registry = tables.Column(linkify=True)
     name = tables.Column(linkify=True)
     container_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:container_list",
+        viewname="plugins:netbox_container_plugin:container_list",
         url_params={"image_id": "pk"},
         verbose_name="Used by (containers)",
     )
@@ -160,7 +160,7 @@ class VolumeTable(NetBoxTable):
     host = tables.Column(linkify=True)
     name = tables.Column(linkify=True)
     mount_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:mount_list",
+        viewname="plugins:netbox_container_plugin:mount_list",
         url_params={"volume_id": "pk"},
         verbose_name="Used by (mounts)",
     )
@@ -180,7 +180,7 @@ class NetworkTable(NetBoxTable):
     host = tables.Column(linkify=True)
     name = tables.Column(linkify=True)
     networksetting_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:networksetting_list",
+        viewname="plugins:netbox_container_plugin:networksetting_list",
         url_params={"network_id": "pk"},
         verbose_name="Used by (network settings)",
     )
@@ -211,37 +211,37 @@ class ContainerTable(NetBoxTable):
     image = tables.Column(linkify=True)
     name = tables.Column(linkify=True)
     port_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:port_list",
+        viewname="plugins:netbox_container_plugin:port_list",
         url_params={"container_id": "pk"},
         verbose_name="Ports count",
     )
     mount_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:mount_list",
+        viewname="plugins:netbox_container_plugin:mount_list",
         url_params={"container_id": "pk"},
         verbose_name="Mounts count",
     )
     bind_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:bind_list",
+        viewname="plugins:netbox_container_plugin:bind_list",
         url_params={"container_id": "pk"},
         verbose_name="Binds count",
     )
     networksetting_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:networksetting_list",
+        viewname="plugins:netbox_container_plugin:networksetting_list",
         url_params={"container_id": "pk"},
         verbose_name="Network Settings count",
     )
     env_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:env_list",
+        viewname="plugins:netbox_container_plugin:env_list",
         url_params={"container_id": "pk"},
         verbose_name="Env variables count",
     )
     label_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:label_list",
+        viewname="plugins:netbox_container_plugin:label_list",
         url_params={"container_id": "pk"},
         verbose_name="Labels count",
     )
     device_count = columns.LinkedCountColumn(
-        viewname="plugins:netbox_docker_plugin:device_list",
+        viewname="plugins:netbox_container_plugin:device_list",
         url_params={"container_id": "pk"},
         verbose_name="Devices count",
     )

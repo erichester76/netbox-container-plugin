@@ -36,7 +36,7 @@ class NestedHostSerializer(WritableNestedSerializer):
     """Nested Host Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:host-detail"
+        view_name="plugins-api:netbox_container_plugin-api:host-detail"
     )
 
     class Meta:
@@ -60,7 +60,7 @@ class NestedImageSerializer(WritableNestedSerializer):
     """Nested Image Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:image-detail"
+        view_name="plugins-api:netbox_container_plugin-api:image-detail"
     )
 
     class Meta:
@@ -83,7 +83,7 @@ class NestedVolumeSerializer(WritableNestedSerializer):
     """Nested Volume Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:volume-detail"
+        view_name="plugins-api:netbox_container_plugin-api:volume-detail"
     )
 
     class Meta:
@@ -117,7 +117,7 @@ class NestedNetworkSerializer(WritableNestedSerializer):
     """Nested Network Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:network-detail"
+        view_name="plugins-api:netbox_container_plugin-api:network-detail"
     )
 
     class Meta:
@@ -139,7 +139,7 @@ class NestedContainerSerializer(WritableNestedSerializer):
     """Nested Container Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:container-detail"
+        view_name="plugins-api:netbox_container_plugin-api:container-detail"
     )
 
     class Meta:
@@ -191,7 +191,7 @@ class NestedRegistrySerializer(WritableNestedSerializer):
     """Nested Registry Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:registry-detail"
+        view_name="plugins-api:netbox_container_plugin-api:registry-detail"
     )
 
     class Meta:
@@ -214,7 +214,7 @@ class ImageSerializer(NetBoxModelSerializer):
     """Image Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:image-detail"
+        view_name="plugins-api:netbox_container_plugin-api:image-detail"
     )
     host = NestedHostSerializer()
     containers = NestedContainerSerializer(many=True, read_only=True)
@@ -248,7 +248,7 @@ class VolumeSerializer(NetBoxModelSerializer):
     """Volume Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:volume-detail"
+        view_name="plugins-api:netbox_container_plugin-api:volume-detail"
     )
     host = NestedHostSerializer()
     mounts = NestedMountSerializer(many=True, read_only=True)
@@ -277,7 +277,7 @@ class NetworkSerializer(NetBoxModelSerializer):
     """Network Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:network-detail"
+        view_name="plugins-api:netbox_container_plugin-api:network-detail"
     )
     host = NestedHostSerializer()
     network_settings = NestedNetworkSettingSerializer(many=True, read_only=True)
@@ -403,7 +403,7 @@ class ContainerSerializer(NetBoxModelSerializer):
     """Container Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:container-detail"
+        view_name="plugins-api:netbox_container_plugin-api:container-detail"
     )
     host = NestedHostSerializer()
     image = NestedImageSerializer()
@@ -573,7 +573,7 @@ class RegistrySerializer(NetBoxModelSerializer):
     """Registry Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:registry-detail"
+        view_name="plugins-api:netbox_container_plugin-api:registry-detail"
     )
     host = NestedHostSerializer()
     images = NestedImageSerializer(many=True, read_only=True)
@@ -601,7 +601,7 @@ class HostSerializer(NetBoxModelSerializer):
     """Host Serializer class"""
 
     url = serializers.HyperlinkedIdentityField(
-        view_name="plugins-api:netbox_docker_plugin-api:host-detail"
+        view_name="plugins-api:netbox_container_plugin-api:host-detail"
     )
     images = NestedImageSerializer(many=True, read_only=True)
     volumes = NestedVolumeSerializer(many=True, read_only=True)

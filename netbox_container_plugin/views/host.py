@@ -57,7 +57,7 @@ class HostGraphView(generic.ObjectView):
 
     queryset = Host.objects.all()
     tab = ViewTab(label="Graph")
-    template_name = "netbox_docker_plugin/host-graph.html"
+    template_name = "netbox_container_plugin/host-graph.html"
 
 
 class HostListView(generic.ObjectListView):
@@ -120,7 +120,7 @@ class HostBulkImportView(generic.BulkImportView):
 class HostDeleteView(generic.ObjectDeleteView):
     """Host delete view definition"""
 
-    default_return_url = "plugins:netbox_docker_plugin:host_list"
+    default_return_url = "plugins:netbox_container_plugin:host_list"
     queryset = Host.objects.all()
 
 

@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     """Migration file"""
 
     dependencies = [
-        ("netbox_docker_plugin", "0020_container_hostname"),
+        ("netbox_container_plugin", "0020_container_hostname"),
     ]
 
     operations = [
@@ -61,12 +61,12 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="images",
-                to="netbox_docker_plugin.registry",
+                to="netbox_container_plugin.registry",
             ),
         ),
         migrations.RemoveConstraint(
             model_name="image",
-            name="netbox_docker_plugin_image_unique_version_name_host",
+            name="netbox_container_plugin_image_unique_version_name_host",
         ),
         migrations.RemoveField(
             model_name="image",
@@ -76,7 +76,7 @@ class Migration(migrations.Migration):
             model_name="image",
             constraint=models.UniqueConstraint(
                 fields=("host", "registry", "name", "version"),
-                name="netbox_docker_plugin_image_unique_version_name_registry_host",
+                name="netbox_container_plugin_image_unique_version_name_registry_host",
             ),
         ),
         migrations.AddField(

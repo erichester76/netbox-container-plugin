@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "netbox_docker_plugin",
+            "netbox_container_plugin",
             "0008_alter_network_unique_together_network_networkid_and_more",
         ),
     ]
@@ -34,14 +34,14 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="network_settings",
-                        to="netbox_docker_plugin.container",
+                        to="netbox_container_plugin.container",
                     ),
                 ),
                 (
                     "network",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.RESTRICT,
-                        to="netbox_docker_plugin.network",
+                        to="netbox_container_plugin.network",
                     ),
                 ),
             ],
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
             model_name="networksetting",
             constraint=models.UniqueConstraint(
                 fields=("container", "network"),
-                name="netbox_docker_plugin_networksetting_unique_container_network",
+                name="netbox_container_plugin_networksetting_unique_container_network",
             ),
         ),
         migrations.AlterField(

@@ -10,8 +10,8 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "netbox_docker_plugin",
-            "0015_remove_mount_netbox_docker_plugin_mount_unique_volume_and_more",
+            "netbox_container_plugin",
+            "0015_remove_mount_netbox_container_plugin_mount_unique_volume_and_more",
         ),
     ]
 

@@ -32,7 +32,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST without permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "start"},
             ),
             "data": post_data({"operation": "start"}),
@@ -59,7 +59,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST with model-level permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "start"},
             ),
             "data": post_data({"operation": "start"}),
@@ -88,7 +88,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST without permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "stop"},
             ),
             "data": post_data({"operation": "stop"}),
@@ -115,7 +115,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST with model-level permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "stop"},
             ),
             "data": post_data({"operation": "stop"}),
@@ -144,7 +144,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST without permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "restart"},
             ),
             "data": post_data({"operation": "restart"}),
@@ -171,7 +171,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST with model-level permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "restart"},
             ),
             "data": post_data({"operation": "restart"}),
@@ -200,7 +200,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST without permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "recreate"},
             ),
             "data": post_data({"operation": "recreate"}),
@@ -227,7 +227,7 @@ class ContainerViewsTestCase(BaseModelViewTestCase, ModelViewTestCase):
         # Try POST with model-level permission
         request = {
             "path": reverse(
-                "plugins:netbox_docker_plugin:container_operation",
+                "plugins:netbox_container_plugin:container_operation",
                 kwargs={"pk": instance.pk, "operation": "recreate"},
             ),
             "data": post_data({"operation": "recreate"}),

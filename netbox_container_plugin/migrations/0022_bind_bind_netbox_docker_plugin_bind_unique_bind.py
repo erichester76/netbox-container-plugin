@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     """ Migration file """
 
     dependencies = [
-        ("netbox_docker_plugin", "0021_registry_and_more"),
+        ("netbox_container_plugin", "0021_registry_and_more"),
     ]
 
     operations = [
@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="binds",
-                        to="netbox_docker_plugin.container",
+                        to="netbox_container_plugin.container",
                     ),
                 ),
             ],
@@ -68,7 +68,7 @@ class Migration(migrations.Migration):
             model_name="bind",
             constraint=models.UniqueConstraint(
                 fields=("container", "container_path", "host_path"),
-                name="netbox_docker_plugin_bind_unique_bind",
+                name="netbox_container_plugin_bind_unique_bind",
             ),
         ),
     ]

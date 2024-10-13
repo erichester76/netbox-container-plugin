@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "netbox_docker_plugin",
+            "netbox_container_plugin",
             "0023_delete_hosts",
         ),
     ]
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 default=None,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="registries",
-                to="netbox_docker_plugin.host",
+                to="netbox_container_plugin.host",
             ),
             preserve_default=False,
         ),
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
         migrations.AddConstraint(
             model_name="registry",
             constraint=models.UniqueConstraint(
-                fields=("host", "name"), name="netbox_docker_plugin_registry_name_host"
+                fields=("host", "name"), name="netbox_container_plugin_registry_name_host"
             ),
         ),
     ]

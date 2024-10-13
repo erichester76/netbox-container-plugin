@@ -35,7 +35,7 @@ fields = [
         models.ForeignKey(
             on_delete=django.db.models.deletion.CASCADE,
             related_name="images",
-            to="netbox_docker_plugin.host",
+            to="netbox_container_plugin.host",
         ),
     ),
 ]
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("extras", "0098_webhook_custom_field_data_webhook_tags"),
-        ("netbox_docker_plugin", "0001_initial"),
+        ("netbox_container_plugin", "0001_initial"),
     ]
 
     operations = [

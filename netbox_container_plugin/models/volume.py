@@ -52,4 +52,4 @@ class Volume(NetBoxModel):
 
     def get_absolute_url(self):
         """override"""
-        return reverse("plugins:netbox_docker_plugin:volume", args=[self.pk])
+        return reverse("plugins:netbox_container_plugin:volume", args=[self.pk])

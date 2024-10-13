@@ -10,7 +10,7 @@ class InitTestCase(APITestCase):
 
     def test_that_plugin_is_loaded(self):
         """Test that the plugin is loaded"""
-        url = reverse("plugins-api:netbox_docker_plugin-api:api-root")
+        url = reverse("plugins-api:netbox_container_plugin-api:api-root")
         response = self.client.get(f"{url}?format=json", **self.header)
 
         content = json.loads(response.content)

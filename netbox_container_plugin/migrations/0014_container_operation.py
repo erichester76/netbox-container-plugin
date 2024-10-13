@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
     """Migration Class"""
 
     dependencies = [
-        ('netbox_docker_plugin', '0013_host_netbox_url'),
+        ('netbox_container_plugin', '0013_host_netbox_url'),
     ]
 
     operations = [

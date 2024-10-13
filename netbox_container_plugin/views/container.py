@@ -40,7 +40,7 @@ class ContainerLogsView(generic.ObjectView):
 
     queryset = Container.objects.all()
     tab = ViewTab(label="Logs")
-    template_name = "netbox_docker_plugin/container-logs.html"
+    template_name = "netbox_container_plugin/container-logs.html"
 
 
 @register_model_view(Container, name="exec", path="exec")
@@ -49,7 +49,7 @@ class ContainerExecView(generic.ObjectView):
 
     queryset = Container.objects.all()
     tab = ViewTab(label="Exec")
-    template_name = "netbox_docker_plugin/container-exec.html"
+    template_name = "netbox_container_plugin/container-exec.html"
 
 
 class ContainerNewView(generic.ObjectEditView):
@@ -111,7 +111,7 @@ class ContainerBulkDeleteView(generic.BulkDeleteView):
 class ContainerDeleteView(generic.ObjectDeleteView):
     """Container delete view definition"""
 
-    default_return_url = "plugins:netbox_docker_plugin:container_list"
+    default_return_url = "plugins:netbox_container_plugin:container_list"
     queryset = Container.objects.all()
 
 

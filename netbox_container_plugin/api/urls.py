@@ -4,7 +4,7 @@ from netbox.api.routers import NetBoxRouter
 from . import views
 
 
-APP_NAME = "netbox_docker_plugin"
+APP_NAME = "netbox_container_plugin"
 
 router = NetBoxRouter()
 router.register("hosts", views.HostViewSet)

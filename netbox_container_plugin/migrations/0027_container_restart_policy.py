@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
     """Migration file"""
 
     dependencies = [
-        ("netbox_docker_plugin", "0026_image_digest"),
+        ("netbox_container_plugin", "0026_image_digest"),
     ]
 
     operations = [

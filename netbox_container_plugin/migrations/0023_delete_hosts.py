@@ -6,10 +6,10 @@ from django.db import migrations
 
 def delete_hosts(apps, schema_editor):
     """Delete all Hosts and Registries"""
-    Host = apps.get_model("netbox_docker_plugin", "Host")
+    Host = apps.get_model("netbox_container_plugin", "Host")
     Host.objects.using(schema_editor.connection.alias).all().delete()
 
-    Registry = Host = apps.get_model("netbox_docker_plugin", "Registry")
+    Registry = Host = apps.get_model("netbox_container_plugin", "Registry")
     Registry.objects.using(schema_editor.connection.alias).all().delete()
 
 
@@ -23,8 +23,8 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "netbox_docker_plugin",
-            "0022_bind_bind_netbox_docker_plugin_bind_unique_bind",
+            "netbox_container_plugin",
+            "0022_bind_bind_netbox_container_plugin_bind_unique_bind",
         ),
     ]
 
