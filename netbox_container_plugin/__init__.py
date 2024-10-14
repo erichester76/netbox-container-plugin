@@ -9,10 +9,10 @@ class NetBoxDockerConfig(PluginConfig):
     """Plugin Config Class"""
 
     name = "netbox_container_plugin"
-    verbose_name = " NetBox Container Plugin"
+    verbose_name = "NetBox Container Plugin"
     description = "Manage Containers"
     version = "3.0.1"
-    base_url = "container"
+    base_url = "docker"
     min_version = "4.1.0"
     author = "Vincent Simonin <vincent@saashup.com>, David Delassus <david.jose.delassus@gmail.com>"
     author_email = "vincent@saashup.com, david.jose.delassus@gmail.com"
